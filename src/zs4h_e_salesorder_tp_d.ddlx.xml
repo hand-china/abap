@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DDLX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DDLX>
+    <METADATA>
+     <NAME>ZS4H_E_SALESORDER_TP_D</NAME>
+     <VERSION>active</VERSION>
+     <MASTER_LANGUAGE>EN</MASTER_LANGUAGE>
+    </METADATA>
+    <CONTENT>
+     <SOURCE>@Metadata.layer: #CUSTOMER
+    
+@UI: {
+    headerInfo: {
+    typeName: &apos;Sales Order&apos;,
+    typeNamePlural: &apos;Sales Orders&apos;,
+    title: { type: #STANDARD, value: &apos;SalesOrder&apos; }
+    }
+}
+annotate view ZS4H_C_SALESORDER_TP_D  with 
+{
+    @UI.hidden: true
+    SalesOrderUUID;
+    
+    @UI: {
+    lineItem: [ { position: 10, label: &apos;Sales Order ID&apos;, importance: #HIGH } ],
+    selectionField: [ { position: 10 } ],
+    identification:[ { position: 10, label: &apos;Sales Order ID&apos; } ]
+    }
+    SalesOrder;
+    
+    @UI: {
+    lineItem: [ { position: 20,label: &apos;Customer&apos;, importance: #MEDIUM } ],
+    identification: [{ position: 20, label: &apos;Customer&apos; }]
+    }
+    BusinessPartner;
+    
+    @UI: {
+    lineItem: [ { position: 30, label: &apos;Status&apos;, importance: #MEDIUM } ],
+    identification:[ { position: 30, label: &apos;Status&apos; } ],
+    selectionField: [ { position: 30} ]
+    }
+    OverallStatus;    
+}</SOURCE>
+    </CONTENT>
+   </DDLX>
+  </asx:values>
+ </asx:abap>
+</abapGit>
